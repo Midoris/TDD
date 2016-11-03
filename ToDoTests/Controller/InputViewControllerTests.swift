@@ -152,7 +152,12 @@ class InputViewControllerTests: XCTestCase {
         mockInputViewController.titleTextField.text = "Trst title"
         mockInputViewController.save()
         XCTAssertTrue(mockInputViewController.dismissGotCalled)
+    }
 
+    func testCancel_DismissingInputViewController() {
+        let mockInputViewController = MockInputViewController()
+        mockInputViewController.cancel()
+        XCTAssertTrue(mockInputViewController.dismissGotCalled)
     }
 
 }
